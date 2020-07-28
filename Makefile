@@ -27,6 +27,7 @@ help:
 	@echo "build              Build docker image locally"
 	@echo "start              Runs the application container"
 	@echo "stop               Stops the application container"
+	@echo "restart            Restarts the application container"
 	@echo "logs               Follow application logs"
 	@echo "test               Runs tests inside the application container"
 
@@ -47,6 +48,10 @@ start:
 stop:
 	$(info Stopping application container)
 	@docker rm --force $(APP_NAME)
+
+
+# Restarts the application container
+restart: stop start
 
 
 # Follows the logs of a running application container
